@@ -19,6 +19,9 @@ public class UrlConnectionReader extends RecursiveTask<String> {
     public UrlConnectionReader(String[] urls) {
         this.urls = urls;
         totalUrl = urls.length;
+        if(urls.length == 1) {
+        	url = urls[0];
+        }
     }
 
     public UrlConnectionReader(String url) {

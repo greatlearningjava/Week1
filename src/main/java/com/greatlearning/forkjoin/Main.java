@@ -4,6 +4,10 @@ import java.util.concurrent.ForkJoinPool;
 
 public class Main {
     public static void main(String[] args) {
+    	if(args.length < 1) {
+    		System.out.println("provide url in arguments");
+    		return;
+    	}
         ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
         UrlConnectionReader urlConnectionReader = new UrlConnectionReader(args);
         String result = forkJoinPool.invoke(urlConnectionReader);
